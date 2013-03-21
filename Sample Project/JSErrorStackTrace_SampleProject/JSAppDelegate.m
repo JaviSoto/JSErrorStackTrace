@@ -18,7 +18,7 @@
 
     NSError *sampleError = [NSError errorWithDomain:NSCocoaErrorDomain code:1337 userInfo:nil];
 
-    NSLog(@"Error creating stack trace: %@", sampleError.js_stackTrace);
+    NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
