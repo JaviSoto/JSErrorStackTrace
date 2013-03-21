@@ -22,4 +22,4 @@ NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 ## License
 Copyright 2013 [Javier Soto](http://twitter.com/javisoto) (ios@javisoto.es)
 
-Check LICENSE file
+JSErrorStackTrace is available under the MIT license. See the LICENSE file for more info.
