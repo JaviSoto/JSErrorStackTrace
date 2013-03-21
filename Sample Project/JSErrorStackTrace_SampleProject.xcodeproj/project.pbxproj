@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D003284C16FACCBA001434CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003284B16FACCBA001434CF /* UIKit.framework */; };
+		D003284E16FACCBA001434CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003284D16FACCBA001434CF /* Foundation.framework */; };
+		D003285016FACCBA001434CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003284F16FACCBA001434CF /* CoreGraphics.framework */; };
+		D003285616FACCBA001434CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D003285416FACCBA001434CF /* InfoPlist.strings */; };
+		D003285816FACCBA001434CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D003285716FACCBA001434CF /* main.m */; };
+		D003285C16FACCBA001434CF /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D003285B16FACCBA001434CF /* JSAppDelegate.m */; };
+		D003285E16FACCBA001434CF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D003285D16FACCBA001434CF /* Default.png */; };
+		D003286016FACCBA001434CF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D003285F16FACCBA001434CF /* Default@2x.png */; };
+		D003286216FACCBA001434CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D003286116FACCBA001434CF /* Default-568h@2x.png */; };
+		D003286B16FACCF4001434CF /* NSError+JSErrorStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = D003286A16FACCF4001434CF /* NSError+JSErrorStackTrace.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D003284816FACCBA001434CF /* JSErrorStackTrace_SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSErrorStackTrace_SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D003284B16FACCBA001434CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D003284D16FACCBA001434CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D003284F16FACCBA001434CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D003285316FACCBA001434CF /* JSErrorStackTrace_SampleProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSErrorStackTrace_SampleProject-Info.plist"; sourceTree = "<group>"; };
+		D003285516FACCBA001434CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D003285716FACCBA001434CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D003285916FACCBA001434CF /* JSErrorStackTrace_SampleProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSErrorStackTrace_SampleProject-Prefix.pch"; sourceTree = "<group>"; };
+		D003285A16FACCBA001434CF /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
+		D003285B16FACCBA001434CF /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
+		D003285D16FACCBA001434CF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D003285F16FACCBA001434CF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D003286116FACCBA001434CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D003286916FACCF4001434CF /* NSError+JSErrorStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+JSErrorStackTrace.h"; path = "../NSError+JSErrorStackTrace.h"; sourceTree = "<group>"; };
+		D003286A16FACCF4001434CF /* NSError+JSErrorStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+JSErrorStackTrace.m"; path = "../NSError+JSErrorStackTrace.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D003284516FACCBA001434CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D003284C16FACCBA001434CF /* UIKit.framework in Frameworks */,
+				D003284E16FACCBA001434CF /* Foundation.framework in Frameworks */,
+				D003285016FACCBA001434CF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D003283F16FACCB9001434CF = {
+			isa = PBXGroup;
+			children = (
+				D003286816FACCDE001434CF /* JSErrorStackTrace */,
+				D003285116FACCBA001434CF /* JSErrorStackTrace_SampleProject */,
+				D003284A16FACCBA001434CF /* Frameworks */,
+				D003284916FACCBA001434CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D003284916FACCBA001434CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D003284816FACCBA001434CF /* JSErrorStackTrace_SampleProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D003284A16FACCBA001434CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D003284B16FACCBA001434CF /* UIKit.framework */,
+				D003284D16FACCBA001434CF /* Foundation.framework */,
+				D003284F16FACCBA001434CF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D003285116FACCBA001434CF /* JSErrorStackTrace_SampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				D003285A16FACCBA001434CF /* JSAppDelegate.h */,
+				D003285B16FACCBA001434CF /* JSAppDelegate.m */,
+				D003285216FACCBA001434CF /* Supporting Files */,
+			);
+			path = JSErrorStackTrace_SampleProject;
+			sourceTree = "<group>";
+		};
+		D003285216FACCBA001434CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D003285316FACCBA001434CF /* JSErrorStackTrace_SampleProject-Info.plist */,
+				D003285416FACCBA001434CF /* InfoPlist.strings */,
+				D003285716FACCBA001434CF /* main.m */,
+				D003285916FACCBA001434CF /* JSErrorStackTrace_SampleProject-Prefix.pch */,
+				D003285D16FACCBA001434CF /* Default.png */,
+				D003285F16FACCBA001434CF /* Default@2x.png */,
+				D003286116FACCBA001434CF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D003286816FACCDE001434CF /* JSErrorStackTrace */ = {
+			isa = PBXGroup;
+			children = (
+				D003286916FACCF4001434CF /* NSError+JSErrorStackTrace.h */,
+				D003286A16FACCF4001434CF /* NSError+JSErrorStackTrace.m */,
+			);
+			name = JSErrorStackTrace;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D003284716FACCBA001434CF /* JSErrorStackTrace_SampleProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D003286516FACCBA001434CF /* Build configuration list for PBXNativeTarget "JSErrorStackTrace_SampleProject" */;
+			buildPhases = (
+				D003284416FACCBA001434CF /* Sources */,
+				D003284516FACCBA001434CF /* Frameworks */,
+				D003284616FACCBA001434CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSErrorStackTrace_SampleProject;
+			productName = JSErrorStackTrace_SampleProject;
+			productReference = D003284816FACCBA001434CF /* JSErrorStackTrace_SampleProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D003284016FACCBA001434CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Javier Soto";
+			};
+			buildConfigurationList = D003284316FACCBA001434CF /* Build configuration list for PBXProject "JSErrorStackTrace_SampleProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D003283F16FACCB9001434CF;
+			productRefGroup = D003284916FACCBA001434CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D003284716FACCBA001434CF /* JSErrorStackTrace_SampleProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D003284616FACCBA001434CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D003285616FACCBA001434CF /* InfoPlist.strings in Resources */,
+				D003285E16FACCBA001434CF /* Default.png in Resources */,
+				D003286016FACCBA001434CF /* Default@2x.png in Resources */,
+				D003286216FACCBA001434CF /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D003284416FACCBA001434CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D003285816FACCBA001434CF /* main.m in Sources */,
+				D003285C16FACCBA001434CF /* JSAppDelegate.m in Sources */,
+				D003286B16FACCF4001434CF /* NSError+JSErrorStackTrace.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D003285416FACCBA001434CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D003285516FACCBA001434CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D003286316FACCBA001434CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D003286416FACCBA001434CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D003286616FACCBA001434CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSErrorStackTrace_SampleProject/JSErrorStackTrace_SampleProject-Prefix.pch";
+				INFOPLIST_FILE = "JSErrorStackTrace_SampleProject/JSErrorStackTrace_SampleProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D003286716FACCBA001434CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSErrorStackTrace_SampleProject/JSErrorStackTrace_SampleProject-Prefix.pch";
+				INFOPLIST_FILE = "JSErrorStackTrace_SampleProject/JSErrorStackTrace_SampleProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D003284316FACCBA001434CF /* Build configuration list for PBXProject "JSErrorStackTrace_SampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D003286316FACCBA001434CF /* Debug */,
+				D003286416FACCBA001434CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D003286516FACCBA001434CF /* Build configuration list for PBXNativeTarget "JSErrorStackTrace_SampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D003286616FACCBA001434CF /* Debug */,
+				D003286716FACCBA001434CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D003284016FACCBA001434CF /* Project object */;
+}
