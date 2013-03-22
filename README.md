@@ -23,6 +23,6 @@ Loading this category on a project involves some memory overhead since it will s
 - Compatible with iOS and Mac OSX.
 
 ## License
-Copyright 2013 [Javier Soto](http://twitter.com/javisoto) (ios@javisoto.es)
+[Javier Soto](http://twitter.com/javisoto) (ios@javisoto.es)
 
 `JSErrorStackTrace` is available under the MIT license. See the LICENSE file for more info.
