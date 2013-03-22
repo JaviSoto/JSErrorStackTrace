@@ -16,7 +16,7 @@ NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 ```
 
 ## Important Note
-Loading this category on a project involves some memory overhead since it will store the `-init` stack trace of every `NSError` object created by the app.
+Loading this category on a project involves some memory overhead since it will store the `-init` stack trace along with every `NSError` object created by the app during the lifetime of the object.
 
 ## Compatibility
 - Works with ARC and non ARC projects.
