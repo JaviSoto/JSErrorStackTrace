@@ -20,7 +20,7 @@ Loading this category on a project involves some memory overhead since it will s
 
 ## Compatibility
 - Works with ARC and non ARC projects.
-- Compatible with iOS and Mac OSX.
+- Compatible with any version of iOS and Mac OSX.
 
 ## License
 [Javier Soto](http://twitter.com/javisoto) (ios@javisoto.es)
