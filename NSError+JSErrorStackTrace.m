@@ -31,7 +31,7 @@
         stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
         
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
-        [userInfo setObject:stacktrace forKey:NSStackTraceKey];
+        [userInfo setObject:[stacktrace description] forKey:NSStackTraceKey];
         dict = userInfo;
     }
     
