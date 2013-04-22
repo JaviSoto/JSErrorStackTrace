@@ -13,6 +13,6 @@
  */
 @interface NSError (JSErrorStackTrace)
 
-- (NSString *)js_stackTrace;
+- (NSString *)js_stackTrace;    // convenience to retrieve NSStackTraceKey from userInfo
 
 @end

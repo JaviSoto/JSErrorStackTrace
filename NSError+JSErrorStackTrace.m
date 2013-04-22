@@ -8,44 +8,31 @@
 
 #import "NSError+JSErrorStackTrace.h"
 
+#import <ExceptionHandling/ExceptionHandling.h>
 #import <objc/runtime.h>
-
-static char JSErrorStackTraceKey;
-
-@interface NSError (JSErrorStackTrace_Private)
-
-@property (nonatomic, copy) NSString *js_stackTrace;
-
-@end
 
 @implementation NSError (JSErrorStackTrace)
 
-- (void)setJs_stackTrace:(NSString *)js_stackTrace
-{
-    objc_setAssociatedObject(self, &JSErrorStackTraceKey, js_stackTrace, OBJC_ASSOCIATION_COPY);
-}
-
 - (NSString *)js_stackTrace
 {
-    return objc_getAssociatedObject(self, &JSErrorStackTraceKey);
+    return [self.userInfo objectForKey:NSStackTraceKey];
 }
 
 #pragma mark - Swizzled Method
 
 - (id)init_jsswizzledInitWithDomain:(NSString *)domain code:(NSInteger)code userInfo:(NSDictionary *)dict
 {
+    // Add stack trace to the userInfo dictionary
+    const NSUInteger linesToRemoveInStackTrace = 1; // This init method
+    
+    NSArray *stacktrace = [NSThread callStackSymbols];
+    stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
+    
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
+    [userInfo setObject:stacktrace forKey:NSStackTraceKey];
+    
     // Call original implementation
-    if ((self = [self init_jsswizzledInitWithDomain:domain code:code userInfo:dict]))
-    {
-        const NSUInteger linesToRemoveInStackTrace = 1; // This init method
-
-        NSArray *stacktrace = [NSThread callStackSymbols];
-        stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
-
-        self.js_stackTrace = [stacktrace description];
-    }
-
-    return self;
+    return [self init_jsswizzledInitWithDomain:domain code:code userInfo:userInfo];
 }
 
 @end
