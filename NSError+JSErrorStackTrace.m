@@ -23,16 +23,20 @@
 - (id)init_jsswizzledInitWithDomain:(NSString *)domain code:(NSInteger)code userInfo:(NSDictionary *)dict
 {
     // Add stack trace to the userInfo dictionary
-    const NSUInteger linesToRemoveInStackTrace = 1; // This init method
-    
-    NSArray *stacktrace = [NSThread callStackSymbols];
-    stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
-    
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
-    [userInfo setObject:stacktrace forKey:NSStackTraceKey];
+    if (![dict objectForKey:NSStackTraceKey])
+    {
+        const NSUInteger linesToRemoveInStackTrace = 1; // This init method
+        
+        NSArray *stacktrace = [NSThread callStackSymbols];
+        stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
+        
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
+        [userInfo setObject:stacktrace forKey:NSStackTraceKey];
+        dict = userInfo;
+    }
     
     // Call original implementation
-    return [self init_jsswizzledInitWithDomain:domain code:code userInfo:userInfo];
+    return [self init_jsswizzledInitWithDomain:domain code:code userInfo:dict];
 }
 
 @end
