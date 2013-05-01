@@ -8,8 +8,13 @@
 
 #import "NSError+JSErrorStackTrace.h"
 
-#import <ExceptionHandling/ExceptionHandling.h>
 #import <objc/runtime.h>
+
+#if TARGET_OS_IPHONE
+#define NSStackTraceKey @"NSStackTraceKey"
+#else
+#import <ExceptionHandling/ExceptionHandling.h>
+#endif
 
 @implementation NSError (JSErrorStackTrace)
 
