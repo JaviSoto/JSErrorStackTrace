@@ -11,16 +11,17 @@
 #import <objc/runtime.h>
 
 #if TARGET_OS_IPHONE
-#define NSStackTraceKey @"NSStackTraceKey"
+NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 #else
 #import <ExceptionHandling/ExceptionHandling.h>
+#define JSErrorStackTraceKey NSStackTraceKey
 #endif
 
 @implementation NSError (JSErrorStackTrace)
 
 - (NSString *)js_stackTrace
 {
-    return [self.userInfo objectForKey:NSStackTraceKey];
+    return [self.userInfo objectForKey:JSErrorStackTraceKey];
 }
 
 #pragma mark - Swizzled Method
@@ -28,7 +29,7 @@
 - (id)init_jsswizzledInitWithDomain:(NSString *)domain code:(NSInteger)code userInfo:(NSDictionary *)dict
 {
     // Add stack trace to the userInfo dictionary
-    if (![dict objectForKey:NSStackTraceKey])
+    if (![dict objectForKey:JSErrorStackTraceKey])
     {
         const NSUInteger linesToRemoveInStackTrace = 1; // This init method
         
@@ -36,7 +37,7 @@
         stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
         
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
-        [userInfo setObject:[stacktrace description] forKey:NSStackTraceKey];
+        [userInfo setObject:[stacktrace description] forKey:JSErrorStackTraceKey];
         dict = userInfo;
     }
     
