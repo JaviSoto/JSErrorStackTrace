@@ -28,7 +28,6 @@ NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 
 - (id)init_jsswizzledInitWithDomain:(NSString *)domain code:(NSInteger)code userInfo:(NSDictionary *)dict
 {
-    // Add stack trace to the userInfo dictionary
     if (![dict objectForKey:JSErrorStackTraceKey])
     {
         const NSUInteger linesToRemoveInStackTrace = 1; // This init method
