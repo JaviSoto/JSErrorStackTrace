@@ -10,42 +10,38 @@
 
 #import <objc/runtime.h>
 
-static char JSErrorStackTraceKey;
-
-@interface NSError (JSErrorStackTrace_Private)
-
-@property (nonatomic, copy) NSString *js_stackTrace;
-
-@end
+#if TARGET_OS_IPHONE
+NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
+#else
+#import <ExceptionHandling/ExceptionHandling.h>
+#define JSErrorStackTraceKey NSStackTraceKey
+#endif
 
 @implementation NSError (JSErrorStackTrace)
 
-- (void)setJs_stackTrace:(NSString *)js_stackTrace
-{
-    objc_setAssociatedObject(self, &JSErrorStackTraceKey, js_stackTrace, OBJC_ASSOCIATION_COPY);
-}
-
 - (NSString *)js_stackTrace
 {
-    return objc_getAssociatedObject(self, &JSErrorStackTraceKey);
+    return [self.userInfo objectForKey:JSErrorStackTraceKey];
 }
 
 #pragma mark - Swizzled Method
 
 - (id)init_jsswizzledInitWithDomain:(NSString *)domain code:(NSInteger)code userInfo:(NSDictionary *)dict
 {
-    // Call original implementation
-    if ((self = [self init_jsswizzledInitWithDomain:domain code:code userInfo:dict]))
+    if (![dict objectForKey:JSErrorStackTraceKey])
     {
         const NSUInteger linesToRemoveInStackTrace = 1; // This init method
-
+        
         NSArray *stacktrace = [NSThread callStackSymbols];
         stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
-
-        self.js_stackTrace = [stacktrace description];
+        
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
+        [userInfo setObject:[stacktrace description] forKey:JSErrorStackTraceKey];
+        dict = userInfo;
     }
-
-    return self;
+    
+    // Call original implementation
+    return [self init_jsswizzledInitWithDomain:domain code:code userInfo:dict];
 }
 
 @end
