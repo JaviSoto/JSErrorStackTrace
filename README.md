@@ -18,6 +18,20 @@ NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 ## Important Note
 Loading this category on a project involves some memory overhead since it will store the `-init` stack trace along with every `NSError` object created by the app during the lifetime of the object.
 
+## Installation
+
+- Using [Cocoapods](http://cocoapods.org/):
+
+Just add this line to your `Podfile`:
+
+```
+pod 'JSErrorStackTrace', '~> 1.0.0'
+```
+
+- Manually:
+
+Simply add the files `NSError+JSErrorStackTrace.h` and `NSError+JSErrorStackTrace.m` to your project.
+
 ## Compatibility
 - Works with ARC and non ARC projects.
 - Compatible with any version of iOS and Mac OSX.
