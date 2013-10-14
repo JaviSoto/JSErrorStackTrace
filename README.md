@@ -40,3 +40,7 @@ Simply add the files `NSError+JSErrorStackTrace.h` and `NSError+JSErrorStackTrac
 [Javier Soto](http://twitter.com/javisoto) (ios@javisoto.es)
 
 `JSErrorStackTrace` is available under the MIT license. See the LICENSE file for more info.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/JaviSoto/jserrorstacktrace/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
