@@ -35,14 +35,8 @@ NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 {
     if (![dict objectForKey:JSErrorStackTraceKey])
     {
-        NSArray *stacktrace = [NSThread callStackSymbols];
-        // Deliberately leave the symbols array untouched. Cocoa tends to
-        // evaluate it lazily, and that evaluation can easily take a significant
-        // chunk of time. Any access to the array makes that kick in, so it's
-        // best if we can defer it to clients.
-        
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
-        [userInfo setObject:stacktrace forKey:JSErrorStackTraceKey];
+        [userInfo setObject:[NSThread callStackSymbols] forKey:JSErrorStackTraceKey];
         dict = userInfo;
     }
     
