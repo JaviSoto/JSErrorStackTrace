@@ -23,7 +23,7 @@ NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 {
     NSArray *stacktrace = [self.userInfo objectForKey:JSErrorStackTraceKey];
     
-    const NSUInteger linesToRemoveInStackTrace = 1; // This init method
+    const NSUInteger linesToRemoveInStackTrace = 1; // the swizzled init method
     stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
     
     return stacktrace.description;
