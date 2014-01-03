@@ -21,7 +21,12 @@ NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 
 - (NSString *)js_stackTrace
 {
-    return [self.userInfo objectForKey:JSErrorStackTraceKey];
+    NSArray *stacktrace = [self.userInfo objectForKey:JSErrorStackTraceKey];
+    
+    const NSUInteger linesToRemoveInStackTrace = 1; // the swizzled init method
+    stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
+    
+    return stacktrace.description;
 }
 
 #pragma mark - Swizzled Method
@@ -30,13 +35,8 @@ NSString *const JSErrorStackTraceKey = @"com.javisoto.errorstacktracekey";
 {
     if (![dict objectForKey:JSErrorStackTraceKey])
     {
-        const NSUInteger linesToRemoveInStackTrace = 1; // This init method
-        
-        NSArray *stacktrace = [NSThread callStackSymbols];
-        stacktrace = [stacktrace subarrayWithRange:NSMakeRange(linesToRemoveInStackTrace, stacktrace.count - linesToRemoveInStackTrace)];
-        
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:dict];
-        [userInfo setObject:[stacktrace description] forKey:JSErrorStackTraceKey];
+        [userInfo setObject:[NSThread callStackSymbols] forKey:JSErrorStackTraceKey];
         dict = userInfo;
     }
     
