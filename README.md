@@ -22,7 +22,7 @@ NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 Just add this line to your `Podfile`:
 
 ```
-pod 'JSErrorStackTrace', '~> 1.0.0'
+pod 'JSErrorStackTrace', '~> 1.1.0'
 ```
 
 - Manually:
