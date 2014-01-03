@@ -15,9 +15,6 @@ NSError *sampleError = [NSError errorWithDomain:NSCocoaErrorDomain code:1337 use
 NSLog(@"Error creation stack trace: %@", sampleError.js_stackTrace);
 ```
 
-## Important Note
-Loading this category on a project involves some memory overhead since it will store the `-init` stack trace along with every `NSError` object created by the app during the lifetime of the object.
-
 ## Installation
 
 - Using [Cocoapods](http://cocoapods.org/):
