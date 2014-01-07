@@ -38,6 +38,3 @@ Simply add the files `NSError+JSErrorStackTrace.h` and `NSError+JSErrorStackTrac
 
 `JSErrorStackTrace` is available under the MIT license. See the LICENSE file for more info.
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/JaviSoto/jserrorstacktrace/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
